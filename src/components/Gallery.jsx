@@ -83,8 +83,8 @@ const Gallery = () => {
     const scrollContainer = scrollContainerRef.current;
     if (!scrollContainer) return;
 
-    const scrollSpeed = 2; // pixels per frame
-    const scrollInterval = 30; // milliseconds between frames
+    const scrollSpeed = 0.5; // pixels per frame
+    const scrollInterval = 60; // milliseconds between frames
 
     const autoScroll = () => {
       if (scrollContainer.scrollLeft <= 0) {
