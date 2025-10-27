@@ -1,23 +1,4 @@
-@keyframes auto-scroll-x {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
 
-.auto-scroll-row {
-  animation: auto-scroll-x 15s linear infinite;
-}
-
-/* Speed up marquee on mobile */
-@media (max-width: 640px) {
-  .auto-scroll-row {
-    animation-duration: 8s;
-  }
-}
-
-/* Utility: pause marquee animation */
-.marquee-paused .auto-scroll-row {
-  animation-play-state: paused;
-}
 
 /* Utility: hide scrollbar but keep scrollable */
 .no-scrollbar {

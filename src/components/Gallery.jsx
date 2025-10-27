@@ -8,6 +8,24 @@ const Gallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollContainerRef = React.useRef(null);
 
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({
+        left: -300, // Scroll left by 300px
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({
+        left: 300, // Scroll right by 300px
+        behavior: 'smooth'
+      });
+    }
+  };
+
   // List of all campaign images
   const galleryImages = [
     'IMG-20251026-WA0004.jpg',
@@ -78,45 +96,7 @@ const Gallery = () => {
     };
   }, [selectedImage, currentIndex]);
 
-  // Auto-scroll effect
-  React.useEffect(() => {
-    const scrollContainer = scrollContainerRef.current;
-    if (!scrollContainer) return;
 
-    const scrollSpeed = 0.5; // pixels per frame
-    const scrollInterval = 60; // milliseconds between frames
-
-    const autoScroll = () => {
-      if (scrollContainer.scrollLeft <= 0) {
-        // Reset to end when reaching the start
-        scrollContainer.scrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
-      } else {
-        scrollContainer.scrollLeft -= scrollSpeed;
-      }
-    };
-
-    const intervalId = setInterval(autoScroll, scrollInterval);
-
-    // Pause auto-scroll on hover
-    const handleMouseEnter = () => clearInterval(intervalId);
-    const handleMouseLeave = () => {
-      const newIntervalId = setInterval(autoScroll, scrollInterval);
-      return newIntervalId;
-    };
-
-    scrollContainer.addEventListener('mouseenter', handleMouseEnter);
-    scrollContainer.addEventListener('mouseleave', () => {
-      const newIntervalId = setInterval(autoScroll, scrollInterval);
-    });
-
-    return () => {
-      clearInterval(intervalId);
-      if (scrollContainer) {
-        scrollContainer.removeEventListener('mouseenter', handleMouseEnter);
-        scrollContainer.removeEventListener('mouseleave', handleMouseLeave);
-      }
-    };
-  }, []);
 
   return (
     <section id="gallery" className="py-20 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-800">
@@ -173,13 +153,21 @@ const Gallery = () => {
             ))}
           </div>
           
-          {/* Scroll indicators */}
-          <div className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/10 backdrop-blur-sm rounded-full p-2 opacity-50">
+          {/* Scroll buttons */}
+          <button
+            onClick={scrollLeft}
+            className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-2 transition-all duration-200 hover:scale-110 z-10"
+            aria-label="Scroll left"
+          >
             <ChevronLeft className="w-4 h-4 text-white" />
-          </div>
-          <div className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/10 backdrop-blur-sm rounded-full p-2 opacity-50">
+          </button>
+          <button
+            onClick={scrollRight}
+            className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-2 transition-all duration-200 hover:scale-110 z-10"
+            aria-label="Scroll right"
+          >
             <ChevronRight className="w-4 h-4 text-white" />
-          </div>
+          </button>
         </div>
 
         {/* Lightbox Modal */}

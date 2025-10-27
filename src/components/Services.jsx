@@ -27,27 +27,6 @@ const Services = () => {
       color: "from-purple-500 to-pink-500"
     },
     {
-      icon: Shield,
-  title: "Cyber Security Specialists",
-      description: "Security specialists and compliance experts to protect your digital assets and ensure regulatory compliance.",
-      features: ["Security Auditing", "Penetration Testing", "Compliance Management", "Risk Assessment"],
-      color: "from-red-500 to-orange-500"
-    },
-    {
-      icon: Users,
-  title: "Project Managers",
-      description: "Certified project managers and scrum masters to keep your initiatives on track and within budget.",
-      features: ["Agile Methodology", "Resource Planning", "Risk Management", "Stakeholder Communication"],
-      color: "from-green-500 to-teal-500"
-    },
-    {
-      icon: Briefcase,
-  title: "Business Specialists",
-      description: "Operations specialists, business analysts, and process improvement experts for operational excellence.",
-      features: ["Process Optimization", "Business Analysis", "Operations Management", "Strategic Planning"],
-      color: "from-indigo-500 to-purple-500"
-    },
-    {
       icon: Settings,
       title: "SAP / Oracle / ERP Experts",
       description: "Skilled consultants and engineers specializing in SAP, Oracle, and ERP solutions to streamline business operations and drive digital transformation.",

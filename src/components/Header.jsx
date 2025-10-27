@@ -52,11 +52,11 @@ const Header = () => {
           >
             <img
               src="/team/pp.jpg"
-              alt="Planning Pros & Consultant logo"
-              className="w-10 h-10 rounded-md object-cover border-4 border-gray-300 shadow-[0_0_12px_2px_rgba(192,192,192,0.7)]"
+              alt="Planning Pros & Consultants logo"
+              className="w-14 h-14 rounded-md object-cover border-4 border-gray-300 shadow-[0_0_12px_2px_rgba(192,192,192,0.7)]"
             />
             <span className="text-2xl font-bold gradient-text">
-              Planning Pros <span className="whitespace-nowrap">&amp; Consultant</span>
+              Planning Pros <span className="whitespace-nowrap">&amp; Consultants</span>
             </span>
           </motion.div>
 

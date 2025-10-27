@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Users, Star } from 'lucide-react';
+import { Users, Star, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Team = () => {
   const teamMembers = [
@@ -43,6 +43,24 @@ const Team = () => {
   const handlePointerUp = () => setPaused(false);
   const handlePointerLeave = () => setPaused(false);
 
+  const scrollLeft = () => {
+    if (containerRef.current) {
+      containerRef.current.scrollBy({
+        left: -300, // Scroll left by 300px
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const scrollRight = () => {
+    if (containerRef.current) {
+      containerRef.current.scrollBy({
+        left: 300, // Scroll right by 300px
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
   <section className="py-20 bg-dark-surface">
       <div className="container mx-auto px-4">
@@ -68,13 +86,13 @@ const Team = () => {
 
         <div
           ref={containerRef}
-          className={`relative group ${paused ? 'marquee-paused' : ''} overflow-hidden sm:overflow-hidden overflow-x-auto no-scrollbar`}
+          className="relative group overflow-x-auto no-scrollbar"
           onPointerDown={handlePointerDown}
           onPointerUp={handlePointerUp}
           onPointerCancel={handlePointerUp}
           onPointerLeave={handlePointerLeave}
         >
-          <div className="inline-flex w-max gap-6 pb-4 whitespace-nowrap auto-scroll-row [will-change:transform] group-hover:[animation-play-state:paused]">
+          <div className="inline-flex w-max gap-6 pb-4 whitespace-nowrap [will-change:transform]">
             {[...teamMembers, ...teamMembers].map((member, index) => (
               <div
                 key={`${member.name}-${index}`}
@@ -97,6 +115,22 @@ const Team = () => {
               </div>
             ))}
           </div>
+          
+          {/* Scroll buttons */}
+          <button
+            onClick={scrollLeft}
+            className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-2 transition-all duration-200 hover:scale-110 z-10"
+            aria-label="Scroll left"
+          >
+            <ChevronLeft className="w-4 h-4 text-white" />
+          </button>
+          <button
+            onClick={scrollRight}
+            className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-2 transition-all duration-200 hover:scale-110 z-10"
+            aria-label="Scroll right"
+          >
+            <ChevronRight className="w-4 h-4 text-white" />
+          </button>
         </div>
       </div>
     </section>
