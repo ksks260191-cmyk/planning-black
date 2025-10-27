@@ -1,6 +1,6 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Users, Star } from 'lucide-react';
 
 const Team = () => {
   const teamMembers = [
@@ -36,30 +36,8 @@ const Team = () => {
     }
   ];
 
-  const [paused, setPaused] = useState(false);
-  const containerRef = useRef(null);
 
-  const handlePointerDown = () => setPaused(true);
-  const handlePointerUp = () => setPaused(false);
-  const handlePointerLeave = () => setPaused(false);
 
-  const scrollLeft = () => {
-    if (containerRef.current) {
-      containerRef.current.scrollBy({
-        left: -300, // Scroll left by 300px
-        behavior: 'smooth'
-      });
-    }
-  };
-
-  const scrollRight = () => {
-    if (containerRef.current) {
-      containerRef.current.scrollBy({
-        left: 300, // Scroll right by 300px
-        behavior: 'smooth'
-      });
-    }
-  };
 
   return (
   <section className="py-20 bg-dark-surface">
@@ -84,27 +62,20 @@ const Team = () => {
           </p>
         </motion.div>
 
-        <div
-          ref={containerRef}
-          className="relative group overflow-x-auto no-scrollbar"
-          onPointerDown={handlePointerDown}
-          onPointerUp={handlePointerUp}
-          onPointerCancel={handlePointerUp}
-          onPointerLeave={handlePointerLeave}
-        >
-          <div className="inline-flex w-max gap-6 pb-4 whitespace-nowrap [will-change:transform]">
-            {[...teamMembers, ...teamMembers].map((member, index) => (
+        <div className="relative">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 md:gap-6 pb-4 justify-items-center">
+            {teamMembers.map((member, index) => (
               <div
                 key={`${member.name}-${index}`}
-                className="flex-none w-52 bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 p-4 rounded-xl text-center shadow-2xl"
+                className="flex-none w-36 md:w-40 bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 p-3 rounded-xl text-center shadow-2xl"
               >
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-24 h-24 rounded-full mx-auto mb-3 object-cover object-center border-2 border-white shadow-md"
+                  className="w-16 h-16 md:w-20 md:h-20 rounded-full mx-auto mb-2 object-cover object-center border-2 border-white shadow-md"
                 />
-                <h3 className="text-sm md:text-base font-bold text-slate-900 mb-1 leading-tight break-words">{member.name}</h3>
-                <p className="text-xs md:text-sm text-blue-600 font-medium leading-snug break-words">{member.role}</p>
+                <h3 className="text-xs md:text-sm font-bold text-slate-900 mb-1 leading-tight break-words">{member.name}</h3>
+                <p className="text-xs text-blue-600 font-medium leading-snug break-words">{member.role}</p>
                 <div className="flex items-center justify-center mt-2 text-yellow-500 gap-0.5">
                   <Star className="w-3 h-3 fill-current" />
                   <Star className="w-3 h-3 fill-current" />
@@ -115,22 +86,6 @@ const Team = () => {
               </div>
             ))}
           </div>
-          
-          {/* Scroll buttons */}
-          <button
-            onClick={scrollLeft}
-            className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-2 transition-all duration-200 hover:scale-110 z-10"
-            aria-label="Scroll left"
-          >
-            <ChevronLeft className="w-4 h-4 text-white" />
-          </button>
-          <button
-            onClick={scrollRight}
-            className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full p-2 transition-all duration-200 hover:scale-110 z-10"
-            aria-label="Scroll right"
-          >
-            <ChevronRight className="w-4 h-4 text-white" />
-          </button>
         </div>
       </div>
     </section>
