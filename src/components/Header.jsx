@@ -53,7 +53,7 @@ const Header = () => {
             <img
               src="/team/pp.jpg"
               alt="Planning Pros & Consultants logo"
-              className="w-12 h-12 rounded-md object-cover border-2 border-gray-300 shadow-[0_0_8px_1px_rgba(192,192,192,0.6)]"
+              className="w-12 h-12 rounded-md object-cover border-4 border-gray-200 shadow-[0_0_16px_4px_rgba(255,255,255,0.65)]"
             />
             <span className="text-2xl font-bold gradient-text">
               Planning Pros <span className="whitespace-nowrap">&amp; Consultants</span>
