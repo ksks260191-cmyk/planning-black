@@ -28,7 +28,6 @@ const Gallery = () => {
 
   // List of all campaign images
   const galleryImages = [
-    'IMG-20251026-WA0004.jpg',
     'IMG-20251026-WA0005.jpg',
     'IMG-20251026-WA0006.jpg',
     'IMG-20251026-WA0007.jpg',

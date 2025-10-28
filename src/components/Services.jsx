@@ -78,7 +78,7 @@ const Services = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-5">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -87,20 +87,20 @@ const Services = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -10 }}
-              className="service-card p-6 rounded-xl group bg-gradient-to-br from-white via-slate-100 to-slate-200 shadow-2xl border border-slate-200"
+              className="service-card p-4 md:p-5 rounded-lg group bg-gradient-to-br from-white via-slate-100 to-slate-200 shadow-xl border border-slate-200"
             >
-              <div className={`w-12 h-12 bg-gradient-to-r ${service.color} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                <service.icon className="w-6 h-6 text-white" />
+              <div className={`w-10 h-10 bg-gradient-to-r ${service.color} rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300`}>
+                <service.icon className="w-5 h-5 text-white" />
               </div>
               
-              <h3 className="text-xl font-bold text-slate-800 mb-3">{service.title}</h3>
-              <p className="text-slate-600 mb-4 leading-normal text-sm md:text-base">{service.description}</p>
+              <h3 className="text-lg md:text-xl font-semibold text-slate-800 mb-2">{service.title}</h3>
+              <p className="text-slate-600 mb-3 leading-snug text-xs md:text-sm">{service.description}</p>
               
-              <ul className="space-y-1 mb-6">
+              <ul className="space-y-1.5 mb-4">
                 {service.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-center space-x-2 text-slate-700">
                     <div className={`w-2 h-2 bg-gradient-to-r ${service.color} rounded-full`}></div>
-                    <span className="text-sm">{feature}</span>
+                    <span className="text-xs md:text-sm">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -115,15 +115,15 @@ const Services = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-center mt-12"
         >
-          <div className="glass-effect p-6 md:p-7 rounded-xl max-w-3xl mx-auto">
-            <h3 className="text-2xl md:text-3xl font-bold gradient-text mb-3">One-Time Fee Model</h3>
-            <p className="text-sm md:text-base text-slate-600 mb-5">
+          <div className="glass-effect p-5 md:p-6 rounded-lg max-w-2xl mx-auto">
+            <h3 className="text-xl md:text-2xl font-bold gradient-text mb-2">One-Time Fee Model</h3>
+            <p className="text-xs md:text-sm text-slate-600 mb-4 leading-snug">
               No recurring charges, no hidden fees. Pay once and get access to our entire network of pre-vetted professionals for your specific project needs.
             </p>
             <Button
               onClick={handleLearnMore}
-              size="default"
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-6 py-3 text-sm md:text-base"
+              size="sm"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-5 py-2.5 text-xs md:text-sm"
             >
               Get Custom Quote
             </Button>
