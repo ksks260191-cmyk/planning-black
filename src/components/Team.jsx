@@ -63,16 +63,16 @@ const Team = () => {
         </motion.div>
 
         <div className="relative">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 md:gap-6 pb-4 justify-items-center">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 md:gap-4 pb-4 justify-items-center">
             {teamMembers.map((member, index) => (
               <div
                 key={`${member.name}-${index}`}
-                className="flex-none w-36 md:w-40 bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 p-3 rounded-xl text-center shadow-2xl"
+                className="flex-none w-36 md:w-40 bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 p-3 rounded-xl text-center shadow-2xl border border-yellow-300/30"
               >
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-16 h-16 md:w-20 md:h-20 rounded-full mx-auto mb-2 object-cover object-center border-2 border-white shadow-md"
+                  className="w-16 h-16 md:w-20 md:h-20 rounded-full mx-auto mb-2 object-cover object-center border-2 border-yellow-400 ring-2 ring-yellow-300 ring-offset-2 ring-offset-slate-200 shadow-md"
                 />
                 <h3 className="text-xs md:text-sm font-bold text-slate-900 mb-1 leading-tight break-words">{member.name}</h3>
                 <p className="text-xs text-blue-600 font-medium leading-snug break-words">{member.role}</p>
