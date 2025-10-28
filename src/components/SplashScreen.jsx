@@ -51,12 +51,14 @@ const SplashScreen = () => {
               transition={{ delay: 0.3, duration: 0.8, type: "spring" }}
               className="mb-6"
             >
-              <div className="w-24 h-24 md:w-32 md:h-32 mx-auto bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl p-4 shadow-2xl">
-                <img
-                  src="/team/pp.jpg"
-                  alt="Planning Pros & Consultants"
-                  className="w-full h-full object-cover rounded-lg"
-                />
+              <div className="w-24 h-24 md:w-32 md:h-32 mx-auto rounded-2xl p-1 border-8 border-gray-200 shadow-[0_0_16px_4px_rgba(255,255,255,0.65)]">
+                <div className="w-full h-full rounded-xl overflow-hidden">
+                  <img
+                    src="/team/pp.jpg"
+                    alt="Planning Pros & Consultants"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             </motion.div>
 
