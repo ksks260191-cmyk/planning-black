@@ -43,14 +43,14 @@ const About = () => {
             <div>
               <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-100 to-purple-100 px-4 py-2 rounded-full mb-4">
                 <Award className="w-4 h-4 text-blue-600" />
-                <span className="text-base font-bold text-slate-900 drop-shadow-lg" style={{textShadow: '0 2px 8px rgba(0,0,0,0.10)'}}>About Planning Pros & Consultant</span>
+                <span className="text-base font-bold text-slate-900 drop-shadow-lg" style={{textShadow: '0 2px 8px rgba(0,0,0,0.10)'}}>About Planning Pros & Consultants</span>
               </div>
               <h2 className="text-3xl lg:text-4xl font-bold mb-5">
                 Your Trusted Partner in
                 <span className="gradient-text block">Staff Augmentation</span>
               </h2>
               <p className="text-base md:text-lg text-slate-200 leading-normal mb-6">
-                Planning Pros & Consultant revolutionizes how companies access top-tier talent. Our innovative one-time fee model eliminates the complexity of traditional staffing, providing you with immediate access to pre-vetted IT and non-IT professionals who seamlessly integrate with your existing teams.
+                Planning Pros & Consultants revolutionizes how companies access top-tier talent. Our innovative one-time fee model eliminates the complexity of traditional staffing, providing you with immediate access to pre-vetted IT and non-IT professionals who seamlessly integrate with your existing teams.
               </p>
             </div>
 

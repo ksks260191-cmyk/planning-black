@@ -30,7 +30,7 @@ const Header = () => {
 
   const handleQuoteClick = () => {
     const phoneNumber = '+918076536172';
-  const message = encodeURIComponent('Hello Planning Pros & Consultant!!, I would like a custom quote for your IT services.');
+  const message = encodeURIComponent('Hello Planning Pros & Consultants!!, I would like a custom quote for your IT services.');
     window.location.href = `https://wa.me/${phoneNumber}?text=${message}`;
   };
 
@@ -51,13 +51,10 @@ const Header = () => {
             className="flex items-center space-x-2"
           >
             <img
-              src="/team/pp.jpg"
-              alt="Planning Pros & Consultants logo"
-              className="w-12 h-12 rounded-md object-cover border-4 border-gray-200 shadow-[0_0_16px_4px_rgba(255,255,255,0.65)]"
+              src="/team/pp.png"
+              alt="Planning Pros & Consultants"
+              className="h-20 md:h-24 w-auto object-contain"
             />
-            <span className="text-2xl font-bold gradient-text">
-              Planning Pros <span className="whitespace-nowrap">&amp; Consultants</span>
-            </span>
           </motion.div>
 
           {/* Desktop Navigation */}

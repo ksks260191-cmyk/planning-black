@@ -54,7 +54,7 @@ const Team = () => {
             <span className="text-sm font-medium text-slate-900">Meet Our Team</span>
           </div>
           <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-3">
-            The <span className="gradient-text">People Behind</span> Planning Pros & Consultant
+            The <span className="gradient-text">People Behind</span> Planning Pros & Consultants
           </h2>
           <p className="text-xs md:text-sm lg:text-base text-slate-200 max-w-2xl mx-auto leading-snug">
             Our dedicated team of experts is committed to connecting you with the best

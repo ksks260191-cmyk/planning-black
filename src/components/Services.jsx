@@ -7,7 +7,7 @@ import { toast } from '@/components/ui/use-toast';
 const Services = () => {
   const handleLearnMore = () => {
     const phoneNumber = '+918076536172';
-  const message = encodeURIComponent('Hello Planning Pros & Consultant!!, I would like a custom quote for your IT services.');
+  const message = encodeURIComponent('Hello Planning Pros & Consultants!!, I would like a custom quote for your IT services.');
     window.location.href = `https://wa.me/${phoneNumber}?text=${message}`;
   };
 
